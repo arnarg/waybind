@@ -1,0 +1,14 @@
+# github.com/BurntSushi/toml v0.3.1
+github.com/BurntSushi/toml
+# github.com/gvalkov/golang-evdev v0.0.0-20191114124502-287e62b94bcb
+## explicit
+github.com/gvalkov/golang-evdev
+# github.com/jinzhu/configor v1.1.1
+## explicit
+github.com/jinzhu/configor
+# gopkg.in/bendahl/uinput.v1 v1.1.1
+## explicit
+gopkg.in/bendahl/uinput.v1
+# gopkg.in/yaml.v2 v2.2.8
+## explicit
+gopkg.in/yaml.v2

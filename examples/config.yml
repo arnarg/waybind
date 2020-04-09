@@ -1,0 +1,70 @@
+device: /dev/input/event0
+rebinds:
+  # Binds KEY_GRAVE to KEY_ESC
+  # If modifier KEY_CAPSLOCK is also pressed then it's still KEY_GRAVE but KEY_CAPSLOCK is removed
+  # If modifier is KEY_SHIFTLEFT then it's KEY_SHIFLEFT + KEY_GRAVE
+  - from: KEY_GRAVE
+    to: KEY_ESC
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_GRAVE
+      - modifier: KEY_LEFTSHIFT
+        to: SKIP
+
+  # Binds KEY_CAPSLOCK + KEY_W to KEY_UP
+  - from: KEY_W
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_UP
+
+  # Binds KEY_CAPSLOCK + KEY_S to KEY_DOWN
+  - from: KEY_S
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_DOWN
+
+  # Binds KEY_CAPSLOCK + KEY_A to KEY_LEFT
+  - from: KEY_A
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_LEFT
+
+  # Binds KEY_CAPSLOCK + KEY_D to KEY_RIGHT
+  - from: KEY_D
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_RIGHT
+
+  # Binds KEY_CAPSLOCK + KEY_BACKSPACE to KEY_DELETE
+  - from: KEY_BACKSPACE
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_DELETE
+
+  # Binds KEY_CAPSLOCK + KEY_X to KEY_PLAY
+  - from: KEY_X
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_PLAY
+  
+  # Binds KEY_CAPSLOCK + KEY_Z to KEY_PREVIOUSSONG
+  - from: KEY_Z
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_PREVIOUSSONG
+
+  # Binds KEY_CAPSLOCK + KEY_C to KEY_NEXTSONG
+  - from: KEY_C
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: KEY_NEXTSONG
+
+  # KEY_CAPSLOCK + KEY_F12 will make waybind exit
+  - from: KEY_F12
+    with_modifiers:
+      - modifier: KEY_CAPSLOCK
+        to: EXIT
+
+  # Completely unbind KEY_CAPSLOCK
+  - from: KEY_CAPSLOCK
+    unbind: true
