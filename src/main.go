@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/user"
 
 	evdev "github.com/gvalkov/golang-evdev"
 	"github.com/jinzhu/configor"
@@ -16,7 +17,12 @@ func main() {
 	config := Config{}
 
 	// Load config
-	configor.New(&configor.Config{ENVPrefix: "WAYBIND"}).Load(&config, "./config.yml", "~/.config/waybind/config.yml", "/etc/waybind/config.yml")
+	user, err := user.Current()
+	if err != nil {
+		fmt.Println("Could not get current user")
+		os.Exit(1)
+	}
+	configor.New(&configor.Config{ENVPrefix: "WAYBIND"}).Load(&config, "./config.yml", user.HomeDir+"/.config/waybind/config.yml", "/etc/waybind/config.yml")
 
 	// Create virtual keyboard
 	keyboard, err := uinput.CreateKeyboard("/dev/uinput", []byte("Waybind Virtual Keyboard"))
