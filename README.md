@@ -10,12 +10,12 @@ There's nothing wayland specific about this rebinder, there's just no shortage o
 
 ## Config
 
-```
+```yaml
 device: /dev/input/event0
 rebinds:
   # Binds KEY_GRAVE to KEY_ESC
   # If modifier KEY_CAPSLOCK is also pressed then it's still KEY_GRAVE but KEY_CAPSLOCK is removed
-  # If modifier is KEY_SHIFTLEFT then it's KEY_SHIFLEFT + KEY_GRAVE
+  # If modifier is KEY_LEFTSHIFT then it's KEY_LEFTSHIFT + KEY_GRAVE
   - from: KEY_GRAVE
     to: KEY_ESC
     with_modifiers:
