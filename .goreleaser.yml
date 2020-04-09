@@ -1,0 +1,25 @@
+builds:
+- env:
+  - CGO_ENABLED=1
+  dir: src
+  goos:
+  - linux
+  goarch:
+  - amd64
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+archives:
+  - id: bin
+    format: binary
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
