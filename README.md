@@ -39,4 +39,9 @@ rebinds:
   # Completely unbind KEY_CAPSLOCK
   - from: KEY_CAPSLOCK
     unbind: true
-```
+``` 
+
+## Install
+### Archlinux
+There is the AUR package [waybind-git](https://aur.archlinux.org/packages/waybind-git/) available.
+The user running waybind should be added to the uinput group.
