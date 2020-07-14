@@ -1,0 +1,13 @@
+[Unit]
+Description=Waybind deamon service
+
+[Service]
+Type=simple
+Restart=always
+User=waybind
+Group=waybind
+ExecStart=/usr/bin/waybind
+PrivateNetwork=true
+
+[Install]
+WantedBy=default.target
