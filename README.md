@@ -11,10 +11,11 @@ There's nothing wayland specific about this remapper, there's just no shortage o
 ## Install
 ### Archlinux
 There is the AUR package [waybind-git](https://aur.archlinux.org/packages/waybind-git/) available.
-The user running waybind should be added to the uinput group.
+The package adds a systemd unit `waybind.service` which runs waybind as the user waybind.
+The configuration file should be located at `/etc/waybind/config.yml`.
 
 ## Configuration
-waybind searches in 3 paths for it configuration file: "./config.yml", "$HOME/.config/waybind/config.yml" and "/etc/waybind/config.yml".
+waybind searches in 3 paths for it configuration file: `./config.yml`, `$HOME/.config/waybind/config.yml` and `/etc/waybind/config.yml`.
 
 To find out which input device you have to put in you can look at `/proc/bus/input/devices` for your keyboard and under "Handlers" you should see which event number it has.
 
