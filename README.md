@@ -8,8 +8,18 @@ If you want to do complex macros take a look at [Hawck](https://github.com/snyba
 
 There's nothing wayland specific about this remapper, there's just no shortage of keyboard remappers for X11, hence the name.
 
-## Config
+## Install
+### Archlinux
+There is the AUR package [waybind-git](https://aur.archlinux.org/packages/waybind-git/) available.
+The package adds a systemd unit `waybind.service` which runs waybind as the user waybind.
+The configuration file should be located at `/etc/waybind/config.yml`.
 
+## Configuration
+waybind searches in 3 paths for it configuration file: `./config.yml`, `$HOME/.config/waybind/config.yml` and `/etc/waybind/config.yml`.
+
+To find out which input device you have to put in you can look at `/proc/bus/input/devices` for your keyboard and under "Handlers" you should see which event number it has.
+
+Following shows an example:
 ```yaml
 device: /dev/input/event0
 rebinds:
@@ -39,4 +49,4 @@ rebinds:
   # Completely unbind KEY_CAPSLOCK
   - from: KEY_CAPSLOCK
     unbind: true
-```
+``` 
