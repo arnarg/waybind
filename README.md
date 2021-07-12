@@ -1,3 +1,5 @@
+**!! I have decided to archive this project as I have not had interest in maintaining it. Check out https://github.com/samvel1024/kbct for a potential replacement. !!**
+
 # waybind
 
 I wrote this to fill my need of doing simple rebindings to match the behaviour of my 60% keyboard on my laptop's keyboard. I'm using sway and I couldn't find suitable software for my needs. [This blog post](https://www.codedbearder.com/posts/writing-keyboard-remapper-wayland/) explains its existence.
